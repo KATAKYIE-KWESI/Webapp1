@@ -1,10 +1,126 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>University Website</title>
+    <link rel="stylesheet" href="{% static 'styles/homepage.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <section class="sub-header">
+        <nav class="nav">
+            <!-- Logo -->
+            <a href="{% url 'homepage' %}" class="nav-logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Eduford</span>
+            </a>
 
+            <!-- Hamburger icon (mobile only) -->
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+
+            <!-- Navigation links -->
+            <div class="nav-links" id="navLinks">
+                <!-- Close icon (mobile only) -->
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="{% url 'homepage' %}">Home</a></li>
+                    <li><a href="{% url 'aboutpage' %}">About</a></li>
+                    <li><a href="{% url 'coursespage' %}">Courses</a></li>
+                    <li><a href="{% url 'blogpage' %}">Blog</a></li>
+                    <li><a href="{% url 'contactpage' %}">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <h1>Our Courses</h1>
+    </section>
+
+<!------------------------------Course----------------------->
+    <section class="course">
+        <h1>Courses We Offer</h1>
+        <p>Here are the courses </p>
+
+        <div class="row">
+            <div class="course-col">
+                <h3>Intermediate</h3>
+                <p>you use this site regularly and would like to help keep the site on the Internet,
+                please  lease consider donating a small sum to help </p>
+            </div>
+            <div class="course-col">
+                <h3>Degree</h3>
+                <p>you use this site regularly and would like to help keep the site on the Internet,
+                please  lease consider donating a small sum to help </p>
+            </div>
+            <div class="course-col">
+                <h3>Post Graduation</h3>
+                <p>you use this site regularly and would like to help keep the site on the Internet,
+                please  lease consider donating a small sum to help </p>
+            </div>
+        </div>
+    </section>
+
+<!-------------------------------Facilities------------------------------->
+ <section class="facilities">
+      <h1>Our Facilities</h1>
+      <p>you use this site regularly and would like to help keep the site on the</p>
+
+      <div class="row">
+          <div class="facilities-col">
+              <img src="{% static 'images/library.png' %}" alt="campus">
+              <h3> World Class Library</h3>
+              <p>you use this site regularly and would like to help keep the site on the</p>
+          </div>
+          <div class="facilities-col">
+              <img src="{% static 'images/basketball.png' %}" alt="campus">
+              <h3> Largest Play Ground</h3>
+              <p>you use this site regularly and would like to help keep the site on the</p>
+          </div>
+          <div class="facilities-col">
+              <img src="{% static 'images/cafeteria.png' %}" alt="campus">
+              <h3> Tasty and healthy Food</h3>
+              <p>you use this site regularly and would like to help keep the site on the</p>
+          </div>
+      </div>
+    </section>
+
+
+<!------------------------Footer   ------------------>
+<section class="footer">
+    <h4>About Us</h4>
+    <p>you use this site regularly and would like to help keep the site on the Internet,
+        <br>please  lease consider donating a small sum to help</p>
+    <div class="icons">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-linkedin"></i>
+    </div>
+    <p>Made with <i class="fa-solid fa-heart"></i>  by Prof Kat Kwesi</p>
+</section>
+
+
+
+    <!-- JS for hamburger menu -->
+    <script>
+        const navLinks = document.getElementById("navLinks");
+
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+
+        // Reset menu on window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 700) {
+                navLinks.style.right = "0";
+            } else {
+                navLinks.style.right = "-200px";
+            }
+        });
+    </script>
 </body>
 </html>
