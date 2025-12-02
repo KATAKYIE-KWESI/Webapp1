@@ -125,3 +125,13 @@ STATICFILES_DIRS = [BASE_DIR / "static"] if (BASE_DIR / "static").exists() else 
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp-relay.brevo.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+EMAIL_HOST_USER = "9d14a7001@smtp-brevo.com"    # stays the same (SMTP login)
+EMAIL_HOST_PASSWORD = "bc7QVEa1dfCUq3W2"
+
+DEFAULT_FROM_EMAIL = "KatCompany <kwabby950@gmail.com>"
